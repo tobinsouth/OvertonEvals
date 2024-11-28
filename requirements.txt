@@ -1,0 +1,7 @@
+google-cloud-aiplatform>=1.64.0
+openai>=1.41.0
+tqdm
+pandas
+numpy
+python-dotenv
+together
