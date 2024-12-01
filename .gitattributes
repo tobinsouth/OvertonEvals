@@ -1,3 +1,4 @@
 data/habermas_machine_questions.csv filter=lfs diff=lfs merge=lfs -text
 data/habermas_machine_questions_with_responses.csv filter=lfs diff=lfs merge=lfs -text
 data/overton_results.csv filter=lfs diff=lfs merge=lfs -text
+data/habermas_machine_questions_with_LLM_generated_perspectives.csv filter=lfs diff=lfs merge=lfs -text
