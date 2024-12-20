@@ -6,3 +6,5 @@ data/ValuePrism_perspectives.csv filter=lfs diff=lfs merge=lfs -text
 data/perspectrum_processed.csv filter=lfs diff=lfs merge=lfs -text
 data/questions_and_human_perspectives.csv filter=lfs diff=lfs merge=lfs -text
 data/raw_entailment_results.csv filter=lfs diff=lfs merge=lfs -text
+data/GlobalOpinionQA_with_LLM_generated_perspectives_150.csv filter=lfs diff=lfs merge=lfs -text
+data/questions_and_human_perspectives_with_responses.csv filter=lfs diff=lfs merge=lfs -text
