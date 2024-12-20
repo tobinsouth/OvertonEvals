@@ -1,7 +1,8 @@
 # Repo specific ignores
 temp/
-habermas_machine/
-
+habermas_machine/ 
+# elinor env 
+oeenv/
 
 # Python
 __pycache__/
