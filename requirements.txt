@@ -6,3 +6,5 @@ numpy
 python-dotenv
 together
 pydantic
+huggingface_hub
+jupyter
