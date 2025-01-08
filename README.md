@@ -4,23 +4,39 @@ This repo contains code for evaluating the Overton Pluralism project.
 
 This project proposes a method for using social choice methods to formalize Overton pluralistic alignment, a concept introduced in this [work](https://arxiv.org/pdf/2402.05070) where a model provides comprehensive, high-coverage responses, representing a spectrum of reasonable responses. This contrasts with alignment to a single viewpoint or a limited set of perspectives.
 
-1. **Dataset**
+1. **Datasets with Questions and Human Perspectives**
 
-This is processed in `habermas_machine_data_processing.ipynb` it's uses Michiel's habermas machine data and extracts only the questions and opinions. It produces the `habermas_machine_questions.csv` file in `data/`. The multiple opinions are collapsed into a single array for each question. We will be indexing on question / question_id a lot.
+This project draws data from a variety of sources to create a dataframe of [`questions`, `perspectives`]. The `perspectives` column is a list of strings, each representing a perspective, and is either directly human generated or a synthesised set of themes/perspectives from the dataset. Details vary by dataset (see below). 
 
-3.** LLM Response Generation**
+All datasets are processed in `datagen_*.ipynb` and intermediate files are saved in `data/`. The final output is `questions_and_human_perspectives.csv` in `data/`.
 
-In `generating_llm_responses.ipynb` we use questions dataset and generate responses from various LLMs to be saved in `habermas_machine_questions_with_responses.csv`. This requires API keys for various LLMs which need to be added to the `.env` file.
+2. **LLM Response Generation**
 
-4.** LLM Perspective Generation**
+In `generating_llm_responses.ipynb` we use the above `questions_and_human_perspectives.csv` dataset and generate responses from various LLMs to be saved in `questions_and_human_perspectives_with_responses.csv`. This requires API keys for various LLMs which need to be added to the `.env` file.
 
-If we want to be able to hill climb, we also need the LLM to be able to generate a structured diversity of all perspectives, which we can evaluate against the human generated perspectives. This is done in `generating_llm_perspectives.ipynb` and saves `habermas_machine_questions_with_perspectives.csv`.
+4. **LLM Perspective Generation** [Incomplete]
+
+If we want to be able to hill climb, we also need the LLM to be able to generate a structured diversity of all perspectives, which we can evaluate against the human generated perspectives. This is done in `generating_llm_perspectives.ipynb` and saves `questions_and_human_perspectives_with_perspectives.csv`.
 
 5. **Comparing Entailment Methods**
 
 Here is the meat of the project. We want to determine in the LLM response contains an opinion, and find the entailment of the opinion in the response. Currently `evaluating_overton.ipynb` is performing this extraction and entailment, as well as performing some meta-analysis and testing. This is a very slow notebook to run (LLM calls) and needs to undergo a lot of work (and likely be extracting into some working files for distributed & offline processing).
 
-6. Future: Applying the best entailment method across the full human and LLM generation opinion sets on all questions. Then, doing some analysis of the outcomes across models, and refining the metrics.
+6. **Applying Entailment Methods**
+
+[TODO:Elinor]
+
+7. **Analysis**
+
+[TODO:Tobin?]
+
+
+## Data Source Notes
+
+**Habermas Machine Data:** This is processed in `habermas_machine_data_processing.ipynb` it's uses Michiel's habermas machine data and extracts only the questions and opinions. It produces the `habermas_machine_questions.csv` file in `data/`.
+
+**ValuePrism:** This is processed in `datagen_ValuePrism.ipynb` it's uses the [ValuePrism](https://huggingface.co/datasets/allenai/ValuePrism) dataset.
+
 
 ## Contributing
 
