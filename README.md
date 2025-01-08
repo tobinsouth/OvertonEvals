@@ -6,7 +6,7 @@ This project proposes a method for using social choice methods to formalize Over
 
 1. **Datasets with Questions and Human Perspectives**
 
-This project draws data from a variety of sources to create a dataframe of [`questions`, `perspectives`]. The `perspectives` column is a list of strings, each representing a perspective, and is either directly human generated or a synthesised set of themes/perspectives from the dataset. Details vary by dataset (see below). 
+This project draws data from a variety of sources to create a dataframe of [`questions`, `perspectives`, `source`]. The `perspectives` column is a list of strings, each representing a perspective, and is either directly human generated or a synthesised set of themes/perspectives from the dataset. Details vary by dataset (see below). 
 
 All datasets are processed in `datagen_*.ipynb` and intermediate files are saved in `data/`. The final output is `questions_and_human_perspectives.csv` in `data/`.
 
