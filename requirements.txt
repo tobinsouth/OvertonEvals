@@ -8,3 +8,4 @@ together
 pydantic
 huggingface_hub
 jupyter
+nltk
