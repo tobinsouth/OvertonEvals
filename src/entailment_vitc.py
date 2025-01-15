@@ -72,6 +72,7 @@ def run_nli_on_mnli(model, tokenizer, results_dir, n=200, seed=0):
         sample_df_mnli = df_mnli.sample(n, random_state=seed)
     else:
         n = len(df_mnli)
+        sample_df_mnli = df_mnli
 
     results = {}
     correct = 0
