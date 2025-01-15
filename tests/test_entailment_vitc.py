@@ -1,5 +1,6 @@
 import unittest
 import pandas as pd
+import nltk
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 from src.entailment_vitc import load_model_and_tokenizer, NLI, tokenize_sentences, find_span_indices, load_vp_data
 
@@ -28,6 +29,7 @@ class TestEntailmentVitc(unittest.TestCase):
 
     def test_tokenize_sentences(self):
         # Test sentence tokenization
+        nltk.download('punkt', quiet=True)
         text = "This is a sentence. This is another one."
         sentences = tokenize_sentences(text)
         self.assertEqual(len(sentences), 2, "There should be two sentences")
