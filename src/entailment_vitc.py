@@ -68,7 +68,10 @@ def run_nli_on_mnli(model, tokenizer, results_dir, n=200, seed=0):
 
     label_mapping = {0: "SUPPORTS", 1: "NOT ENOUGH INFO", 2: "REFUTES"}
 
-    sample_df_mnli = df_mnli.sample(n, random_state=seed)
+    if n:
+        sample_df_mnli = df_mnli.sample(n, random_state=seed)
+    else:
+        n = len(df_mnli)
 
     results = {}
     correct = 0
