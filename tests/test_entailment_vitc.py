@@ -1,7 +1,6 @@
 import unittest
 import pandas as pd
 import nltk
-from transformers import AutoTokenizer, AutoModelForSequenceClassification
 from src.entailment_vitc import load_model_and_tokenizer, NLI, tokenize_sentences, find_span_indices, load_vp_data
 
 class TestEntailmentVitc(unittest.TestCase):
@@ -30,6 +29,7 @@ class TestEntailmentVitc(unittest.TestCase):
     def test_tokenize_sentences(self):
         # Test sentence tokenization
         nltk.download('punkt', quiet=True)
+        nltk.download('punkt_tab', quiet=True)
         text = "This is a sentence. This is another one."
         sentences = tokenize_sentences(text)
         self.assertEqual(len(sentences), 2, "There should be two sentences")
@@ -46,6 +46,7 @@ class TestEntailmentVitc(unittest.TestCase):
         df = load_vp_data(self.data_dir, fname=self.fname)
         self.assertIsInstance(df, pd.DataFrame, "The result should be a DataFrame")
         self.assertGreater(len(df), 0, "The DataFrame should not be empty")
+        self.assertIn('source', df.columns, "DataFrame should have a 'source' column")
 
     def test_load_vp_data_sample(self):
         # Test loading a sample of the dataset
@@ -53,6 +54,7 @@ class TestEntailmentVitc(unittest.TestCase):
         df = load_vp_data(self.data_dir, n=sample_size, seed=42, fname=self.fname)
         self.assertIsInstance(df, pd.DataFrame, "The result should be a DataFrame")
         self.assertEqual(len(df), sample_size, f"The DataFrame should have {sample_size} rows")
+        self.assertIn('source', df.columns, "DataFrame should have a 'source' column")
 
 
 if __name__ == '__main__':
