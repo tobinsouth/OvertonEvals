@@ -4,7 +4,7 @@ import json
 import numpy as np
 import pandas as pd
 import tqdm
-from transformers import AlbertTokenizer, AutoTokenizer, AutoModelForSequenceClassification
+from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import torch
 import torch.nn.functional as F
 import nltk
@@ -20,7 +20,7 @@ def load_model_and_tokenizer(model_name="tals/albert-xlarge-vitaminc"):
     """
 
     model = AutoModelForSequenceClassification.from_pretrained(model_name)
-    tokenizer = AlbertTokenizer.from_pretrained(model_name)
+    tokenizer = AutoTokenizer.from_pretrained(model_name)
     return model, tokenizer
 
 
