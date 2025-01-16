@@ -100,8 +100,10 @@ def run_nli_on_mnli(model, tokenizer, results_dir, n=200, seed=0):
         
 def tokenize_sentences(text):
     # Use NLTK's sent_tokenize to split the text into sentences
-    nltk.download('punkt', quiet=True)  # Ensure 'punkt' tokenizer is downloaded
     sentences = nltk.sent_tokenize(text)
+    # we can skip any sentences that contains entirely nonalphabetical chars since they wouldn't contain real content
+    # this will optimize the checking sentence-by-sentence somewhat
+    sentences = [sentence for sentence in sentences if sentence.isalpha() or any(c.isalpha() for c in sentence)]
     return sentences
 
 def find_span_indices(string, substring):
