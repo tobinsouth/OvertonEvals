@@ -9,3 +9,6 @@ pydantic
 huggingface_hub
 jupyter
 nltk
+transformers
+torch
+sentencepiece
