@@ -1,0 +1,452 @@
+{
+  "7003": {
+    "promptID": 131068,
+    "pairID": "131068c",
+    "premise": "At 9:00, American Airlines Executive Vice President Gerard Arpey learned that communications had been lost with American 77.",
+    "hypothesis": "It wasn't until 10:00 that Gerard Arpey leaned that communication had been lost with American 77.",
+    "prediction": "REFUTES",
+    "score": 0.9462152719497681,
+    "label": "REFUTES"
+  },
+  "1931": {
+    "promptID": 27879,
+    "pairID": "27879n",
+    "premise": "Not really, that's all.",
+    "hypothesis": "We do not have anything else.",
+    "prediction": "SUPPORTS",
+    "score": 0.7941887974739075,
+    "label": "SUPPORTS"
+  },
+  "9825": {
+    "promptID": 92911,
+    "pairID": "92911e",
+    "premise": "So, I'm kind of like the hope, I guess.",
+    "hypothesis": "I suppose I'm the hope, or something.",
+    "prediction": "SUPPORTS",
+    "score": 0.985093355178833,
+    "label": "SUPPORTS"
+  },
+  "9418": {
+    "promptID": 59040,
+    "pairID": "59040e",
+    "premise": "Duende [XV, 1] may be absent in Italian and French, as Mr. Bria assures us, but it is alive and prospering in Portuguese.",
+    "hypothesis": "Mr. Bria assures use that Duende might not be in Italian and French.",
+    "prediction": "SUPPORTS",
+    "score": 0.9795032739639282,
+    "label": "SUPPORTS"
+  },
+  "6546": {
+    "promptID": 36563,
+    "pairID": "36563c",
+    "premise": "Simply increasing inventory for all SKUs would be a poor allocation of investment, further increasing the order-fill rate for those SKUs for which service levels are already high.",
+    "hypothesis": "The one and only way to solve the problem is to increase inventory for all SKUs.",
+    "prediction": "REFUTES",
+    "score": 0.40414273738861084,
+    "label": "REFUTES"
+  },
+  "2453": {
+    "promptID": 32643,
+    "pairID": "32643n",
+    "premise": "The guidance for Wherley was to send up the aircraft, with orders to protect the White House and take out any aircraft that threatened the Capitol.",
+    "hypothesis": "WHerley thought that this was too late to actually matter.",
+    "prediction": "NOT ENOUGH INFO",
+    "score": 0.9717750549316406,
+    "label": "NOT ENOUGH INFO"
+  },
+  "1373": {
+    "promptID": 37478,
+    "pairID": "37478e",
+    "premise": "But like, so I was always raised like a tomboy and everything like that and my dad treated me like a guy all the time.",
+    "hypothesis": "My father treated me like a guy since I was such a tomboy.",
+    "prediction": "SUPPORTS",
+    "score": 0.9811913371086121,
+    "label": "SUPPORTS"
+  },
+  "1984": {
+    "promptID": 115636,
+    "pairID": "115636n",
+    "premise": "...Einstein's Special Theory of Relativity does not say that E = MC2 and in leap year MC2.",
+    "hypothesis": "Einstein's Special Theory of Relativity doesn't encompass the speed of light.",
+    "prediction": "NOT ENOUGH INFO",
+    "score": 0.5854418873786926,
+    "label": "SUPPORTS"
+  },
+  "3131": {
+    "promptID": 33314,
+    "pairID": "33314c",
+    "premise": "Please send your most generous gift today.",
+    "hypothesis": "PLease don't send a gift.",
+    "prediction": "REFUTES",
+    "score": 0.9544086456298828,
+    "label": "REFUTES"
+  },
+  "6533": {
+    "promptID": 135889,
+    "pairID": "135889e",
+    "premise": "The Science Department is in the process of renovating the labs and other facilities in order to provide our students with science instruction that is second to none.",
+    "hypothesis": "The Science Department is updating our labs to provide first-rate science instruction.",
+    "prediction": "SUPPORTS",
+    "score": 0.892866849899292,
+    "label": "SUPPORTS"
+  },
+  "6818": {
+    "promptID": 123077,
+    "pairID": "123077e",
+    "premise": "Logs indicate that it began at 9:25 and included the CIA; the FBI; the departments of State, Justice, and Defense; the FAA; and the White House shelter.",
+    "hypothesis": "Logs show the meeting included the CIA, FBI, State departments, Justice, Defence, FAA, and the White House.",
+    "prediction": "SUPPORTS",
+    "score": 0.9789134860038757,
+    "label": "SUPPORTS"
+  },
+  "2709": {
+    "promptID": 143343,
+    "pairID": "143343e",
+    "premise": "But, then like me and my mom will talk all the time and she'll come over here and she'll like have a beer and a cigarette with me and it doesn't matter anymore!",
+    "hypothesis": "My mom and I hang out all the time and chat, we even share a drink.",
+    "prediction": "SUPPORTS",
+    "score": 0.8873291015625,
+    "label": "SUPPORTS"
+  },
+  "1611": {
+    "promptID": 61835,
+    "pairID": "61835c",
+    "premise": "No normal speaker of English encountering Man wants but little here below wonders'except facetiously'why women have been ignored.",
+    "hypothesis": "Women have never been ignored.",
+    "prediction": "REFUTES",
+    "score": 0.972971498966217,
+    "label": "REFUTES"
+  },
+  "2838": {
+    "promptID": 120676,
+    "pairID": "120676n",
+    "premise": "The top thread is then pulled up by the take-up arm.",
+    "hypothesis": "The top thread is pulled by the arm that has thread around it.",
+    "prediction": "REFUTES",
+    "score": 0.615888774394989,
+    "label": "NOT ENOUGH INFO"
+  },
+  "843": {
+    "promptID": 111145,
+    "pairID": "111145n",
+    "premise": "Excitement abounds as some 300 students and proud parents and grandparents fill the IUPUI Conference Center for the event.",
+    "hypothesis": "More than half of the students that fill the IUPUI Conference Center are women.",
+    "prediction": "NOT ENOUGH INFO",
+    "score": 0.9905579090118408,
+    "label": "NOT ENOUGH INFO"
+  },
+  "7767": {
+    "promptID": 61596,
+    "pairID": "61596n",
+    "premise": "On that occasion, Lisa had seen a ferocious dog barking behind the chain-linked fence.",
+    "hypothesis": "Lisa had seen a large black dog with pointy ears barking behind the chain-linked fence. ",
+    "prediction": "NOT ENOUGH INFO",
+    "score": 0.9334592223167419,
+    "label": "NOT ENOUGH INFO"
+  },
+  "9600": {
+    "promptID": 38145,
+    "pairID": "38145n",
+    "premise": "Um, but he'd bend down and stay down to help that dog.",
+    "hypothesis": "Bending down, he realized the dog was fine.",
+    "prediction": "NOT ENOUGH INFO",
+    "score": 0.5568743944168091,
+    "label": "NOT ENOUGH INFO"
+  },
+  "6399": {
+    "promptID": 116889,
+    "pairID": "116889e",
+    "premise": "I said, If you, if you would lend me your boys tomorrow.",
+    "hypothesis": "If you would let your boys help out tomorrow, that'd be great. ",
+    "prediction": "NOT ENOUGH INFO",
+    "score": 0.6873474717140198,
+    "label": "SUPPORTS"
+  },
+  "2457": {
+    "promptID": 124370,
+    "pairID": "124370c",
+    "premise": "Oh yes, yes they did.",
+    "hypothesis": "No, no they didn't.",
+    "prediction": "REFUTES",
+    "score": 0.8482306003570557,
+    "label": "REFUTES"
+  },
+  "3037": {
+    "promptID": 58848,
+    "pairID": "58848e",
+    "premise": "She further indicated that the hijackers were not aware of her phone call, and that they had put all the passengers in the back of the plane.",
+    "hypothesis": "She made a phone call that the hijackers might not have been aware of.",
+    "prediction": "SUPPORTS",
+    "score": 0.9242528080940247,
+    "label": "SUPPORTS"
+  },
+  "2308": {
+    "promptID": 89900,
+    "pairID": "89900e",
+    "premise": "In the past eight years SEND has renovated over 70 homes for affordable resale to families, created more than 100 high quality apartments, assisted 20 businesses to expand or improve their facilities, created three new parks, and taught more than 200 youth work ethics and skills.",
+    "hypothesis": "SEND has renovated dozens of homes to sell at affordable prices.",
+    "prediction": "SUPPORTS",
+    "score": 0.7857122421264648,
+    "label": "SUPPORTS"
+  },
+  "7612": {
+    "promptID": 65216,
+    "pairID": "65216c",
+    "premise": "This fall alumni and students at the Indiana University School of Law Indianapolis will initiate several programs to encourage alumni support for the school.",
+    "hypothesis": "No programs centered on alumni support are available. ",
+    "prediction": "REFUTES",
+    "score": 0.5554202795028687,
+    "label": "REFUTES"
+  },
+  "6321": {
+    "promptID": 55768,
+    "pairID": "55768n",
+    "premise": "Um, not too many stories about my dad's childhood.",
+    "hypothesis": "My dad doesn't remember much of his childhood.",
+    "prediction": "SUPPORTS",
+    "score": 0.9343169927597046,
+    "label": "NOT ENOUGH INFO"
+  },
+  "3090": {
+    "promptID": 140110,
+    "pairID": "140110c",
+    "premise": "And it, it kind of makes me feel bad.",
+    "hypothesis": "It kind of makes me feel like a badass.",
+    "prediction": "NOT ENOUGH INFO",
+    "score": 0.7741314768791199,
+    "label": "REFUTES"
+  },
+  "4763": {
+    "promptID": 47786,
+    "pairID": "47786n",
+    "premise": "When bar codes and EDI are combined with advanced shipping practices, the benefit of each practice is enhanced; order processing occurs more rapidly, accurately, and with less paper.",
+    "hypothesis": "Order processing occurs more rapidly, accurately, and with less paper, and customers leave better reviews. ",
+    "prediction": "NOT ENOUGH INFO",
+    "score": 0.922224223613739,
+    "label": "NOT ENOUGH INFO"
+  },
+  "2458": {
+    "promptID": 95843,
+    "pairID": "95843c",
+    "premise": "The optimal policy is one for which marginal increases or decreases in chosen inventory levels will not confer additional profits.",
+    "hypothesis": "The best policy should be sensitive to changes in select inventory levels.",
+    "prediction": "NOT ENOUGH INFO",
+    "score": 0.6404697895050049,
+    "label": "NOT ENOUGH INFO"
+  },
+  "7907": {
+    "promptID": 99118,
+    "pairID": "99118c",
+    "premise": "It had at most one or two minutes to react to the unidentified plane approaching Washington, and the fighters were in the wrong place to be able to help.",
+    "hypothesis": "The fighters had half an hour to respond to it.",
+    "prediction": "REFUTES",
+    "score": 0.9779555201530457,
+    "label": "REFUTES"
+  },
+  "9192": {
+    "promptID": 26403,
+    "pairID": "26403c",
+    "premise": "Letters in support or condemnation of the QES program (though one may assume they will insist on programme ) should be addressed to Mrs Anne Shelley, Secretary, Queen's English Society, 3 Manor Crescent, Guildford GU2 6NF, England.",
+    "hypothesis": "The letters about the QES program should be sent to Bob in the United States.",
+    "prediction": "REFUTES",
+    "score": 0.7538576722145081,
+    "label": "REFUTES"
+  },
+  "4015": {
+    "promptID": 17561,
+    "pairID": "17561e",
+    "premise": "Do you think that's what it was?",
+    "hypothesis": "Is that what it was, you think?",
+    "prediction": "SUPPORTS",
+    "score": 0.9780188798904419,
+    "label": "SUPPORTS"
+  },
+  "3980": {
+    "promptID": 89992,
+    "pairID": "89992n",
+    "premise": "As the Soviets began their withdrawal, the jihad's leaders debated what to do next.",
+    "hypothesis": "The jihads actions were dependant on to Soviets. ",
+    "prediction": "REFUTES",
+    "score": 0.7005996704101562,
+    "label": "NOT ENOUGH INFO"
+  },
+  "1286": {
+    "promptID": 40007,
+    "pairID": "40007n",
+    "premise": "Both individuals agreed that the teleconference played no role in coordinating a response to the attacks of 9/11.",
+    "hypothesis": "Neither party claimed that the phone meeting of the prior morning had been responsible for the actions taken in relation to the attacks on 9/11.",
+    "prediction": "SUPPORTS",
+    "score": 0.7946316003799438,
+    "label": "SUPPORTS"
+  },
+  "487": {
+    "promptID": 67715,
+    "pairID": "67715c",
+    "premise": "Your contribution is more than a simple tax-deductible donation.",
+    "hypothesis": "Neither your contribution nor tax-deductible donations are welcome.",
+    "prediction": "REFUTES",
+    "score": 0.8131068348884583,
+    "label": "REFUTES"
+  },
+  "4216": {
+    "promptID": 24906,
+    "pairID": "24906e",
+    "premise": "And, as a Palestinian, he saw Israel as the top priority for the next stage.",
+    "hypothesis": "He saw Israel as the priority for the next stage because he was a Palestinian.",
+    "prediction": "SUPPORTS",
+    "score": 0.986854076385498,
+    "label": "SUPPORTS"
+  },
+  "6252": {
+    "promptID": 97460,
+    "pairID": "97460c",
+    "premise": "That's a good attitude!",
+    "hypothesis": "That is a negative and unwanted perspective. ",
+    "prediction": "REFUTES",
+    "score": 0.9880244135856628,
+    "label": "REFUTES"
+  },
+  "3774": {
+    "promptID": 110242,
+    "pairID": "110242e",
+    "premise": "How do they feel about your being a Theater major?",
+    "hypothesis": "What are their feelings toward your major?",
+    "prediction": "SUPPORTS",
+    "score": 0.9200169444084167,
+    "label": "SUPPORTS"
+  },
+  "8967": {
+    "promptID": 72339,
+    "pairID": "72339e",
+    "premise": "These changes are related to new technology and foreign competition.",
+    "hypothesis": "Foreign competition and newer technology are the root of these changes.",
+    "prediction": "SUPPORTS",
+    "score": 0.9738407731056213,
+    "label": "NOT ENOUGH INFO"
+  },
+  "8283": {
+    "promptID": 138034,
+    "pairID": "138034n",
+    "premise": "Fortunately, not all reports are as disturbing as Hochschild's.",
+    "hypothesis": "All of Hochschild's studies were very disturbing.",
+    "prediction": "REFUTES",
+    "score": 0.6617233157157898,
+    "label": "NOT ENOUGH INFO"
+  },
+  "6271": {
+    "promptID": 64141,
+    "pairID": "64141c",
+    "premise": "The syllabication of headwords is not an important feature in British  the Collins English Dictionary , which offered an elaborate system in its first edition (1979), set the words solid in its second edition (1986), but I am informed that the major portion of the correspondence received at Collins Publishing concerning the dictionary concerns this change and is critical of it.",
+    "hypothesis": " The syllabication of headwords is the most important feature of the British the Collins Dictionary.",
+    "prediction": "REFUTES",
+    "score": 0.9929768443107605,
+    "label": "REFUTES"
+  },
+  "2734": {
+    "promptID": 97019,
+    "pairID": "97019c",
+    "premise": "But what about a reference by MacNeil's partner, Jim Lehrer, to  some ten thousand black gold and diamond miners [on strike in South Africa]. ",
+    "hypothesis": "MacNeil worked alone.",
+    "prediction": "REFUTES",
+    "score": 0.892844021320343,
+    "label": "REFUTES"
+  },
+  "1425": {
+    "promptID": 85488,
+    "pairID": "85488n",
+    "premise": "The Vice Chairman joined the conference shortly before 10:00; the Secretary, shortly before 10:30.",
+    "hypothesis": "The NSA did not join until around 11 am.",
+    "prediction": "NOT ENOUGH INFO",
+    "score": 0.9593915343284607,
+    "label": "NOT ENOUGH INFO"
+  },
+  "7921": {
+    "promptID": 27157,
+    "pairID": "27157n",
+    "premise": "The last two items merit comment.",
+    "hypothesis": "The bottom two items deserve to be commented on negatively.",
+    "prediction": "NOT ENOUGH INFO",
+    "score": 0.6380767226219177,
+    "label": "NOT ENOUGH INFO"
+  },
+  "655": {
+    "promptID": 137987,
+    "pairID": "137987c",
+    "premise": "Over the years, a number of well-respected individuals have spoken out on behalf of our mission ...our service ...and our stewardship.",
+    "hypothesis": "We had trouble in finding people to support our mission.",
+    "prediction": "NOT ENOUGH INFO",
+    "score": 0.649699866771698,
+    "label": "REFUTES"
+  },
+  "7010": {
+    "promptID": 121330,
+    "pairID": "121330n",
+    "premise": "The Herron School of Art and Gallery of Indiana University is contemporary art!",
+    "hypothesis": "Only contemporary art is housed in Herron's gallery.",
+    "prediction": "SUPPORTS",
+    "score": 0.9897492527961731,
+    "label": "NOT ENOUGH INFO"
+  },
+  "1741": {
+    "promptID": 138977,
+    "pairID": "138977c",
+    "premise": "My friend, a punster, spotted the fact that the plate nicely violated the no  offensive  plates rule.",
+    "hypothesis": "My friend noticed that the cup was full of piping hot coffee.",
+    "prediction": "REFUTES",
+    "score": 0.6189665198326111,
+    "label": "REFUTES"
+  },
+  "7163": {
+    "promptID": 94112,
+    "pairID": "94112c",
+    "premise": "The call lasted about two minutes, after which Policastro and a colleague tried unsuccessfully to contact the flight.",
+    "hypothesis": "The call only lasted 5 seconds before it was dropped.",
+    "prediction": "REFUTES",
+    "score": 0.9757998585700989,
+    "label": "REFUTES"
+  },
+  "4597": {
+    "promptID": 90635,
+    "pairID": "90635c",
+    "premise": "We lived between, between the border of Honduras and El Salvador.",
+    "hypothesis": "We lived thousands of miles from Honduras and El salvador.",
+    "prediction": "REFUTES",
+    "score": 0.8637423515319824,
+    "label": "REFUTES"
+  },
+  "9213": {
+    "promptID": 84254,
+    "pairID": "84254c",
+    "premise": "(Origin unknown; not from Gaelic)  I think it hardly fanciful to discern a note of Calvinist disapproval in this curt disclaimer.",
+    "hypothesis": "A note of Calvinist disapproval is rather fanciful to discern here.",
+    "prediction": "REFUTES",
+    "score": 0.7111433148384094,
+    "label": "REFUTES"
+  },
+  "5903": {
+    "promptID": 111141,
+    "pairID": "111141e",
+    "premise": "Do you have a playtime at school?",
+    "hypothesis": "Do you have time to play at school?",
+    "prediction": "SUPPORTS",
+    "score": 0.9815071821212769,
+    "label": "SUPPORTS"
+  },
+  "5667": {
+    "promptID": 29791,
+    "pairID": "29791n",
+    "premise": "Last year a small number of alumni each contributed between $2,500 and $4,999 to the school.",
+    "hypothesis": "A number of alumni contributed over $5000.  ",
+    "prediction": "SUPPORTS",
+    "score": 0.5957425236701965,
+    "label": "NOT ENOUGH INFO"
+  },
+  "9348": {
+    "promptID": 126018,
+    "pairID": "126018c",
+    "premise": " Yes, I understand.",
+    "hypothesis": "I don't understand at all.",
+    "prediction": "REFUTES",
+    "score": 0.9847853183746338,
+    "label": "REFUTES"
+  }
+}
