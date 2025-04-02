@@ -227,14 +227,20 @@ def plot_response_statistics(df, save_path):
     
     # Create box plot with custom colors and labels
     colors = {
-        'o3-mini': '#8FD3C4',        # mint green
-        'gpt-4.5-preview': '#FFFACD', # light yellow
-        'gemma-3-27b-it': '#CBC3E3',  # light purple
+        'claude-3.7': '#98FB98',       # pale green
         'deepseek-r1': '#FFB6B6',     # light coral
         'deepseek-v3': '#ADD8E6',      # light blue
-        'claude-3.7': '#98FB98'       # pale green
+        'gpt-4.5-preview': '#FFFACD', # light yellow
+        # 'gemma-3-27b-it': '#CBC3E3',  # light purple
+        'llama-3.1-70B': '#FFA07A',   # light salmon
+        'llama-3.3-70B': '#DDA0DD',    # plum
+        'o3-mini': '#8FD3C4',        # mint green
     }
     
+    # Sort DataFrame according to colors dictionary order
+    df['model'] = pd.Categorical(df['model'], categories=list(colors.keys()), ordered=True)
+    df = df.sort_values('model')
+
     box_plot = sns.boxplot(
         data=df,
         x='model',
@@ -251,7 +257,7 @@ def plot_response_statistics(df, save_path):
     plt.ylabel('Response Length (characters)', fontsize=12)
     
     # Add median values on top of each box
-    medians = df.groupby('model')['response_length'].median()
+    medians = df.groupby('model', observed=True)['response_length'].median() 
     
     # Get the boxes from the plot
     boxes = [artist for artist in box_plot.get_children() 
@@ -321,13 +327,19 @@ def plot_response_statistics_words(df, save_path):
     
     # Create box plot with custom colors and labels
     colors = {
-        'o3-mini': '#8FD3C4',        # mint green
-        'gpt-4.5-preview': '#FFFACD', # light yellow
-        'gemma-3-27b-it': '#CBC3E3',  # light purple
+        'claude-3.7': '#98FB98',       # pale green
         'deepseek-r1': '#FFB6B6',     # light coral
         'deepseek-v3': '#ADD8E6',      # light blue
-        'claude-3.7': '#98FB98'       # pale green
+        'gpt-4.5-preview': '#FFFACD', # light yellow
+        # 'gemma-3-27b-it': '#CBC3E3',  # light purple
+        'llama-3.1-70B': '#FFA07A',   # light salmon
+        'llama-3.3-70B': '#DDA0DD',    # plum
+        'o3-mini': '#8FD3C4',        # mint green
     }
+    
+    # Sort DataFrame according to colors dictionary order
+    df['model'] = pd.Categorical(df['model'], categories=list(colors.keys()), ordered=True)
+    df = df.sort_values('model')
     
     box_plot = sns.boxplot(
         data=df,
@@ -345,7 +357,7 @@ def plot_response_statistics_words(df, save_path):
     plt.ylabel('Response Length (words)', fontsize=12)
     
     # Add median values on top of each box
-    medians = df.groupby('model')['word_count'].median()
+    medians = df.groupby('model', observed=True)['word_count'].median()
     
     # Get the boxes from the plot
     boxes = [artist for artist in box_plot.get_children() 
@@ -388,11 +400,13 @@ def main():
     
     # Define models
     oai_models = ['o3-mini', 'gpt-4.5-preview']
-    gdp_models = ['gemma-3-27b-it']
+    gdp_models = []#['gemma-3-27b-it']
     anthropic_models = ['claude-3.7']
     together_models = {
         'deepseek-r1': 'deepseek-ai/DeepSeek-R1-Distill-Llama-70B',
-        'deepseek-v3': 'deepseek-ai/DeepSeek-V3'
+        'deepseek-v3': 'deepseek-ai/DeepSeek-V3',
+        'llama-3.1-70B': 'meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo',
+        'llama-3.3-70B': 'meta-llama/Llama-3.3-70B-Instruct-Turbo'
     }
     
     if not args.stats_only:
@@ -404,7 +418,6 @@ def main():
             [(name, path, True) for name, path in together_models.items()]  # Together models
         )
 
-        # Process models in parallel
         # Process models in parallel
         print(f"Starting parallel processing of {len(model_info)} models...")
         with ThreadPoolExecutor(max_workers=len(model_info)) as executor:
