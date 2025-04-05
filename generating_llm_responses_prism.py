@@ -234,6 +234,8 @@ def plot_response_statistics(df, save_path):
         # 'gemma-3-27b-it': '#CBC3E3',  # light purple
         'llama-3.1-70B': '#FFA07A',   # light salmon
         'llama-3.3-70B': '#DDA0DD',    # plum
+        'llama-4-scout': '#FFE4B5',   # moccasin
+        'llama-4-maverick': '#F0E68C', # khaki
         'o3-mini': '#8FD3C4',        # mint green
     }
     
@@ -334,6 +336,8 @@ def plot_response_statistics_words(df, save_path):
         # 'gemma-3-27b-it': '#CBC3E3',  # light purple
         'llama-3.1-70B': '#FFA07A',   # light salmon
         'llama-3.3-70B': '#DDA0DD',    # plum
+        'llama-4-scout': '#FFE4B5',   # moccasin
+        'llama-4-maverick': '#F0E68C', # khaki
         'o3-mini': '#8FD3C4',        # mint green
     }
     
@@ -390,7 +394,62 @@ def plot_response_statistics_words(df, save_path):
     plt.savefig(save_path, dpi=300, bbox_inches='tight')
     plt.close()
 
+
+def select_response_closest_to_global_median_per_model(df):
+    """
+    Select one response per question per model from the DataFrame based on the global median response length.
+
+    The function calculates the global median response length from the 'response' column and then, for each
+    (question, model) pair, selects the response whose length is closest to this global median. This guarantees
+    that if there are multiple responses per question for a given model, only the one with the smallest absolute 
+    difference from the global median is kept.
+
+    Parameters:
+    -----------
+    df : pandas.DataFrame
+        DataFrame containing at least the columns 'question', 'model', and 'response'. If the column 
+        'response_length' is missing, it will be computed as the length of the response string.
+
+    Returns:
+    --------
+    pandas.DataFrame
+        A new DataFrame where each (question, model) pair is associated with a single response (the one closest
+        in length to the global median response length).
+    """
+    df = df.copy()
     
+    mask = df['model'] == 'deepseek-r1'
+    df.loc[mask, 'response'] = df.loc[mask, 'response'].apply(clean_deepseek_response)
+
+    # Ensure that the 'response_length' column exists
+    if 'response_length' not in df.columns:
+        df['response_length'] = df['response'].apply(lambda x: len(x) if isinstance(x, str) else 0)
+    
+    # Compute the global median response length across all responses
+    global_median = df['response_length'].median()
+    print(f"Global median response length (chars): {global_median}")
+    
+    # Compute the absolute difference from the global median for each response
+    df['abs_diff'] = (df['response_length'] - global_median).abs()
+    
+    # For each (question, model) pair, select the response with the smallest absolute difference
+    selected_indices = []
+    groups = df.groupby(['question', 'model'])
+    for (question, model), group in groups:
+        idx = group['abs_diff'].idxmin()
+        selected_indices.append(idx)
+        selected_row = df.loc[idx]
+        print(f"For question: '{question}', model: '{model}', selected response length: {selected_row['response_length']} with abs diff: {selected_row['abs_diff']}")
+
+    # Create the final DataFrame
+    selected_df = df.loc[selected_indices].copy()
+    # Drop the temporary 'abs_diff' column
+    selected_df.drop(columns=['abs_diff'], inplace=True)
+    # Reset index for neatness
+    selected_df.reset_index(drop=True, inplace=True)
+    
+    return selected_df
+
 def main():
     import argparse
     parser = argparse.ArgumentParser(description='Generate LLM responses and analyze statistics')
@@ -405,8 +464,10 @@ def main():
     together_models = {
         'deepseek-r1': 'deepseek-ai/DeepSeek-R1-Distill-Llama-70B',
         'deepseek-v3': 'deepseek-ai/DeepSeek-V3',
-        'llama-3.1-70B': 'meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo',
-        'llama-3.3-70B': 'meta-llama/Llama-3.3-70B-Instruct-Turbo'
+        # 'llama-3.1-70B': 'meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo',
+        # 'llama-3.3-70B': 'meta-llama/Llama-3.3-70B-Instruct-Turbo',
+        'llama-4-maverick': 'meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8',
+        # 'llama-4-scout': 'meta-llama/Llama-4-Scout-17B-16E-Instruct'
     }
     
     if not args.stats_only:
@@ -461,15 +522,12 @@ def main():
     # Create and save final DataFrame
     df = pd.DataFrame(combined_responses)
     print(df.columns,df.shape)
-    df.to_csv(os.path.join(DATA_PATH, 'prism_questions_with_responses.csv'), index=False)
+    # df.to_csv(os.path.join(DATA_PATH, 'prism_questions_with_responses.csv'), index=False)
 
     # Print statistics
     model_stats = print_response_statistics(df)
     word_model_stats = print_response_statistics_words(df)
     
-    # Optionally save statistics
-    # model_stats.to_csv(os.path.join(DATA_PATH, 'model_length_statistics.csv'))
-
     # Add plotting
     char_plot_path = os.path.join(TEMP_PATH, 'model_response_lengths.png')
     word_plot_path = os.path.join(TEMP_PATH, 'model_response_word_counts.png')
@@ -480,6 +538,8 @@ def main():
     print(f"\nCharacter count plot saved to: {char_plot_path}")
     print(f"Word count plot saved to: {word_plot_path}")
     
+    final_df = select_response_closest_to_global_median_per_model(df)
+    final_df.to_csv(os.path.join(DATA_PATH, 'final_prism_questions_with_responses.csv'), index=False)
     return model_stats, word_model_stats
 
 
