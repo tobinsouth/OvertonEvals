@@ -23,7 +23,7 @@
     "annotation_codebook_url": "",
 
     "data_files": [
-       "data_files/processed/prism_questions_and_human_perspectives_with_responses.csv"
+       "data_files/processed/final_prism_questions_with_responses.csv"
     ],
 
     "item_properties": {
@@ -85,7 +85,7 @@
       "output_filename": 'task_assignment.json',
       "sampling_strategy": 'ordered',
       "labels_per_instance": 8,
-      "instance_per_annotator": 50,
+      "instance_per_annotator": 7,
       "test_question_per_annotator": 0, # you must set up the test question in surveyflow to use this function
 
       "users": [  ],
@@ -144,9 +144,10 @@
       {
             "annotation_type": "highlight",
             "name": "highlight",
-            "description": "Which part of the answer do you agree with?",
+            "description": "Which part of the answer do you agree/disagree with?",
             "labels": [
-               "Highlighted",
+               "Agree",
+               "Disagree",
             ],
 
             # If true, numbers [1-len(labels)] will be bound to each
@@ -164,6 +165,8 @@
     #"html_layout": "templates/examples/fixed_keybinding_layout.html",
     "html_layout": "templates/layout.html",
 
+    "surveyflow_html_layout": "templates/survey_layout.html",
+
     # The core UI files for Potato. You should not need to change these normally.
     #
     # Exceptions to this might include:
@@ -174,7 +177,7 @@
     # if you want to use your own template,
     # please replace the string as a path to the template
     "base_html_template": "templates/base_template.html",
-    "header_file": "default",
+    "header_file": "templates/header.html",
 
     # This is where the actual HTML files will be generated
     "site_dir": "default"
