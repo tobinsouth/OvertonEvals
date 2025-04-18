@@ -62,21 +62,11 @@
       #"order" : ['pre_annotation', 'prestudy_passed', 'prestudy_failed', 'post_annotation'],
       "order" : ['pre_annotation', 'post_annotation'],
       "pre_annotation": ['surveyflow/intro.jsonl', 'surveyflow/instruction.jsonl', 'surveyflow/consent.jsonl'],
-      "post_annotation": ['surveyflow/experience.jsonl', 'surveyflow/demographic_questions.jsonl','surveyflow/end.jsonl'],
+      "post_annotation": ['surveyflow/political_spectrum.jsonl','surveyflow/end.jsonl'],
       # If set, we will automatically generate testing questions similar to the annotation instances, but explicitly ask the annotator to choose one option
       "testing": ['surveyflow/testing.jsonl'],
     },
 
-    #prestudy test, annotators who fail this test will be disalloed to continue annotation
-    "prestudy": {
-        "on": False,
-        "minimum_score": 0.8,
-        "groundtruth_key": 'whether_match',
-        "question_key": 'Whether the presented sentences are discussing the same scientific finding',
-        "answer_mapping": {'Yes': True, 'No': False},
-        "pass_page": 'surveyflow/prestudy_pass.jsonl',
-        "fail_page": 'surveyflow/prestudy_fail.jsonl'
-    },
 
 
     "automatic_assignment": {
@@ -84,8 +74,8 @@
       "on": True,
       "output_filename": 'task_assignment.json',
       "sampling_strategy": 'ordered',
-      "labels_per_instance": 8,
-      "instance_per_annotator": 7,
+      "labels_per_instance": 2,
+      "instance_per_annotator": 21,
       "test_question_per_annotator": 0, # you must set up the test question in surveyflow to use this function
 
       "users": [  ],
@@ -110,7 +100,7 @@
             "textarea": {
               "on": True,
               "rows": 5,
-              "cols": 30
+              "cols": 60
             }
             # If true, numbers [1-len(labels)] will be bound to each
             # label. Aannotations with more than 10 are not supported with this
@@ -122,14 +112,14 @@
         "annotation_type": "likert",
 
         # This name gets used in reporting the annotation results
-        "name": "Given the LLM generated response, how much do you agree with it?",
+        "name": "How important is this question to you?",
 
         # This text is shown to the user and can be a longer statement
-        "description": "Given the LLM generated response, how much do you agree with it?",
+        "description": "How important is this question to you?",
 
         # The min and max labels are text shown at each end of the scale
-        "min_label": "Strongly disagree",
-        "max_label": "Strongly agree",
+        "min_label": "Not at all",
+        "max_label": "Very important",
         # adding requirements for labels, when "required" is True, the annotators will be asked to finish the current instance to proceed
         "label_requirement": { "required": True },
         # How many scale points to show
@@ -140,6 +130,49 @@
         # keybinding and will need to use the full item specification to
         # bind all scale points to keys.
         #"sequential_key_binding": True,
+      },
+      {
+        "annotation_type": "likert",
+
+        # This name gets used in reporting the annotation results
+        "name": "To what extent is your perspective represented in this response?",
+
+        # This text is shown to the user and can be a longer statement
+        "description": "To what extent is your perspective represented in this response?",
+
+        # The min and max labels are text shown at each end of the scale
+        "min_label": "Not at all",
+        "max_label": "Fully represented",
+        # adding requirements for labels, when "required" is True, the annotators will be asked to finish the current instance to proceed
+        "label_requirement": { "required": True },
+        # How many scale points to show
+        "size": 5,
+
+        # If true, keys [1-size] will be bound to scale responses. Likert
+        # scales larger than 10 are not supported with this simple
+        # keybinding and will need to use the full item specification to
+        # bind all scale points to keys.
+        #"sequential_key_binding": True,
+      },
+      {
+            "annotation_type": "text",
+            "name": "justification",
+            "description": "Why do you feel this way? (Please give a short answer with 1-2 sentences)",
+
+            # adding requirements for labels, when "required" is True, the annotators will be asked to finish the current instance to proceed
+            "label_requirement": {"required":True},
+
+            # if you want to use multi-line textbox, turn on the text area and set the desired rows and cols of the textbox
+            "textarea": {
+              "on": True,
+              "rows": 2,
+              "cols": 60
+            }
+            # If true, numbers [1-len(labels)] will be bound to each
+            # label. Aannotations with more than 10 are not supported with this
+            # simple keybinding and will need to use the full item specification
+            # to bind all labels to keys.
+            #"sequential_key_binding": True,
       },
       {
             "annotation_type": "highlight",
