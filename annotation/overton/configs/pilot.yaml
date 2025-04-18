@@ -8,7 +8,7 @@
     # Potato will write the annotation file for all annotations to this
     # directory, as well as per-annotator output files and state information
     # necessary to restart annotation.
-    "output_annotation_dir": "annotation_output/full/",
+    "output_annotation_dir": "annotation_output/pilot/",
 
     # The output format for the all-annotator data. Allowed formats are:
     # * jsonl
@@ -75,7 +75,7 @@
       "output_filename": 'task_assignment.json',
       "sampling_strategy": 'ordered',
       "labels_per_instance": 2,
-      "instance_per_annotator": 21,
+      "instance_per_annotator": 7,
       "test_question_per_annotator": 0, # you must set up the test question in surveyflow to use this function
 
       "users": [  ],
@@ -91,7 +91,7 @@
       {
             "annotation_type": "text",
             "name": "answer",
-            "description": "Please give a genuine answer to the question.",
+            "description": "Please share your opinion on the question in 2-3 sentences.",
 
             # adding requirements for labels, when "required" is True, the annotators will be asked to finish the current instance to proceed
             "label_requirement": {"required":True},
@@ -155,33 +155,14 @@
         #"sequential_key_binding": True,
       },
       {
-            "annotation_type": "text",
-            "name": "justification",
-            "description": "Why do you feel this way? (Please give a short answer with 1-2 sentences)",
-
-            # adding requirements for labels, when "required" is True, the annotators will be asked to finish the current instance to proceed
-            "label_requirement": {"required":True},
-
-            # if you want to use multi-line textbox, turn on the text area and set the desired rows and cols of the textbox
-            "textarea": {
-              "on": True,
-              "rows": 2,
-              "cols": 60
-            }
-            # If true, numbers [1-len(labels)] will be bound to each
-            # label. Aannotations with more than 10 are not supported with this
-            # simple keybinding and will need to use the full item specification
-            # to bind all labels to keys.
-            #"sequential_key_binding": True,
-      },
-      {
             "annotation_type": "highlight",
             "name": "highlight",
-            "description": "Which part of the answer do you agree/disagree with?",
+            "description": "Which parts of the response align with your beliefs or oppose your opinion?",
             "labels": [
-               "Agree",
-               "Disagree",
+               "Oppose",
+               "Align",
             ],
+            "label_requirement": { "required": True },
 
             # If true, numbers [1-len(labels)] will be bound to each
             # label. Aannotations with more than 10 are not supported with this
