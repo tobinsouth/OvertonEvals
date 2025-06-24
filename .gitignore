@@ -1,6 +1,7 @@
 # Repo specific ignores
 temp/
 habermas_machine/ 
+perspectrum/
 # elinor env 
 oeenv/
 
