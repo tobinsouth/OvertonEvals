@@ -4,6 +4,11 @@ This repo contains code for evaluating the Overton Pluralism project.
 
 This project proposes a method for using social choice methods to formalize Overton pluralistic alignment, a concept introduced in this [work](https://arxiv.org/pdf/2402.05070) where a model provides comprehensive, high-coverage responses, representing a spectrum of reasonable responses. This contrasts with alignment to a single viewpoint or a limited set of perspectives.
 
+# Setup
+
+1. create an environment and `pip install -r requirements.txt`
+2. run `nbstripout --install --attributes` so that python notebook metadata are stripped before committing so annoying weird commit issues don't arise
+
 1. **Datasets with Questions and Human Perspectives**
 
 This project draws data from a variety of sources to create a dataframe of [`questions`, `perspectives`, `source`]. The `perspectives` column is a list of strings, each representing a perspective, and is either directly human generated or a synthesised set of themes/perspectives from the dataset. Details vary by dataset (see below). 
