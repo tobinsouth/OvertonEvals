@@ -44,10 +44,14 @@
       "users": [  ],
     },
 
+    "prolific": {
+      "config_file_path": 'configs/prolific_config.yaml'
+    },
+
     #defining the ways annotators entering the annotation system
     "login": {
-       "type": 'url_direct',    #can be 'password' or 'url_direct'
-       "url_argument": 'PROLIFIC_PID' # when the login type is set to 'url_direct', 'url_argument' must be setup for a direct url argument login
+       "type": 'prolific',    #can be 'password' or 'url_direct'
+       #"url_argument": 'PROLIFIC_PID' # when the login type is set to 'url_direct', 'url_argument' must be setup for a direct url argument login
     },
 
     #the jumping-to-id function will be disabled if "jumping_to_id_disabled" is True
@@ -74,8 +78,8 @@
       "on": True,
       "output_filename": 'task_assignment.json',
       "sampling_strategy": 'ordered',
-      "labels_per_instance": 2,
-      "instance_per_annotator": 7,
+      "labels_per_instance": 10,
+      "instance_per_annotator": 30,
       "test_question_per_annotator": 0, # you must set up the test question in surveyflow to use this function
 
       "users": [  ],
@@ -91,9 +95,9 @@
       {
         "annotation_type": "radio",
         "name": "selection",
-        "description": "Which option do you agree with the most?",
+        "description": "Which option is closest to your position?",
         "labels": [
-          "Option 1", "Option 2"
+          "Option 1", "Neutral", "Option 2"
         ],
         "label_requirement": { "required": True },
       },
@@ -166,7 +170,7 @@
       {
             "annotation_type": "highlight",
             "name": "highlight",
-            "description": "Which parts of the answer do you agree/disagree with? (Please highlight both parts you agree/disagree with)",
+            "description": "Which parts of the answer align/oppose with your views? (Please click the button below and then highlight the parts that align/oppose with your views)",
             "labels": [
                "Oppose",
                "Align",
