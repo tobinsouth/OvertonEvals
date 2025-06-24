@@ -9,6 +9,7 @@ This project proposes a method for using social choice methods to formalize Over
 1. create an environment and `pip install -r requirements.txt`
 2. run `nbstripout --install --attributes` so that python notebook metadata are stripped before committing so annoying weird commit issues don't arise
 
+# Project Overview (outdated)
 1. **Datasets with Questions and Human Perspectives**
 
 This project draws data from a variety of sources to create a dataframe of [`questions`, `perspectives`, `source`]. The `perspectives` column is a list of strings, each representing a perspective, and is either directly human generated or a synthesised set of themes/perspectives from the dataset. Details vary by dataset (see below). 
