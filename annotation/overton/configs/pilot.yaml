@@ -23,7 +23,7 @@
     "annotation_codebook_url": "",
 
     "data_files": [
-       "data_files/processed/final_prism_questions_with_responses.csv"
+       "data_files/processed/pilot_modelslant_questions_with_responses.csv"
     ],
 
     "item_properties": {
@@ -88,6 +88,15 @@
     "horizontal_key_bindings": true,
 
     "annotation_schemes": [
+      {
+        "annotation_type": "radio",
+        "name": "selection",
+        "description": "Which option do you agree with the most?",
+        "labels": [
+          "Option 1", "Option 2"
+        ],
+        "label_requirement": { "required": True },
+      },
       {
             "annotation_type": "text",
             "name": "answer",
@@ -157,7 +166,7 @@
       {
             "annotation_type": "highlight",
             "name": "highlight",
-            "description": "Which parts of the response align with your beliefs or oppose your opinion?",
+            "description": "Which parts of the answer do you agree/disagree with? (Please highlight both parts you agree/disagree with)",
             "labels": [
                "Oppose",
                "Align",
